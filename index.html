@@ -1,262 +1,196 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Color Trading VIP Channel</title>
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        body {
-            background-color: #0b0f19;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
+  <title>Colour Trading | Telegram Community</title>
 
-        /* Outer Card Box */
-        .card-container {
-            background-color: #111827;
-            border: 3px solid #10b981;
-            box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
-            border-radius: 24px;
-            width: 100%;
-            max-width: 420px;
-            padding: 30px 20px;
-            text-align: center;
-            color: #ffffff;
-            position: relative;
-            overflow: hidden;
-        }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        /* Logo Styling */
-        .logo-box {
-            background-color: #ffffff;
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 20px auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background: #050b12;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
 
-        .circle-logo {
-            background: linear-gradient(135deg, #ef4444 0%, #10b981 100%);
-            width: 135px;
-            height: 135px;
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #ffffff;
-            font-weight: 800;
-            line-height: 1.1;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
-        }
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: #0b1520;
+      border: 1px solid #203b30;
+      border-radius: 18px;
+      overflow: hidden;
+      text-align: center;
+    }
 
-        .logo-title {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+    .header {
+      padding: 25px 18px 18px;
+    }
 
-        .logo-main {
-            font-size: 26px;
-            text-transform: uppercase;
-            font-weight: 900;
-        }
+    .tagline {
+      color: #45f45d;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
 
-        .logo-tiny {
-            font-size: 9px;
-            margin-top: 4px;
-            background: rgba(0, 0, 0, 0.3);
-            padding: 2px 8px;
-            border-radius: 10px;
-        }
+    h1 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
 
-        /* Headings */
-        .main-heading {
-            color: #ffffff;
-            font-size: 19px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
+    h1 span {
+      color: #45f45d;
+    }
 
-        .star {
-            color: #facc15;
-        }
+    .subtitle {
+      color: #c5d0db;
+      font-size: 14px;
+      line-height: 1.7;
+    }
 
-        .sub-heading {
-            color: #10b981;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 0.8px;
-            margin-bottom: 18px;
-        }
+    .banner {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
 
-        /* VIP Badge */
-        .badge-vip {
-            background: linear-gradient(90deg, #ef4444, #10b981);
-            color: #ffffff;
-            font-weight: 800;
-            font-size: 14px;
-            padding: 8px 20px;
-            border-radius: 50px;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
+    .content {
+      padding: 24px 20px;
+    }
 
-        /* Telegram Button */
-        .telegram-btn {
-            background-color: #10b981;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 17px;
-            padding: 14px 20px;
-            border-radius: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 22px;
-            transition: transform 0.2s ease, background-color 0.2s ease;
-            cursor: pointer;
-            border: none;
-            width: 100%;
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
-        }
+    h2 {
+      font-size: 23px;
+      margin-bottom: 12px;
+    }
 
-        .telegram-btn:hover {
-            transform: scale(1.03);
-            background-color: #059669;
-        }
+    .description {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #c5d0db;
+      margin-bottom: 22px;
+    }
 
-        .telegram-icon {
-            font-size: 18px;
-            transform: rotate(-20deg);
-        }
+    .features {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 23px;
+    }
 
-        /* Features List */
-        .features-list {
-            list-style: none;
-            text-align: left;
-            max-width: 350px;
-            margin: 0 auto 22px auto;
-        }
+    .features li {
+      padding: 9px 0;
+      color: #e0e9ef;
+      font-size: 14px;
+      border-bottom: 1px solid #20303c;
+    }
 
-        .features-list li {
-            font-size: 12.5px;
-            font-weight: 700;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            letter-spacing: 0.3px;
-            color: #e5e7eb;
-        }
+    .join-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(90deg, #27db45, #8cff39);
+      color: #071108;
+      padding: 16px 10px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 900;
+    }
 
-        .features-list span {
-            margin-right: 10px;
-            font-size: 15px;
-        }
+    .join-btn:hover {
+      opacity: 0.9;
+    }
 
-        /* Join Now Footer */
-        .join-now {
-            font-size: 24px;
-            font-weight: 900;
-            letter-spacing: 1px;
-            background: linear-gradient(90deg, #ef4444, #facc15, #10b981);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            cursor: pointer;
-            transition: transform 0.2s ease;
-        }
+    .note {
+      color: #94a3b8;
+      font-size: 11px;
+      line-height: 1.7;
+      margin-top: 20px;
+    }
 
-        .join-now:hover {
-            transform: scale(1.05);
-        }
-    </style>
+    .footer {
+      background: #060d13;
+      border-top: 1px solid #203b30;
+      padding: 15px;
+      font-size: 11px;
+      color: #aab7c3;
+      line-height: 1.7;
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="card-container">
-        <!-- Top Trading Logo -->
-        <div class="logo-box">
-            <div class="circle-logo">
-                <span class="logo-title">Color</span>
-                <span class="logo-main">TRADING</span>
-                <span class="logo-tiny">100% Sure Signals</span>
-            </div>
-        </div>
+  <main class="container">
 
-        <!-- Main Heading -->
-        <h1 class="main-heading">
-            <span class="star">&#9733;</span> VIP COLOR TRADING <span class="star">&#9733;</span>
-        </h1>
+    <header class="header">
+      <p class="tagline">
+        LEARN • ANALYZE • TRADE • GROW
+      </p>
 
-        <p class="sub-heading">&#128200; INDIA'S NO.1 PREDICTION CHANNEL &#128640;</p>
+      <h1>COLOUR <span>TRADING</span></h1>
 
-        <!-- VIP Badge -->
-        <div class="badge-vip">
-            <span>&#128308;</span>
-            <span>DAILY 3-4 SURE SHOT WIN</span>
-            <span>&#128994;</span>
-        </div>
+      <p class="subtitle">
+        Explore trading education, market concepts
+        and technical analysis learning resources.
+      </p>
+    </header>
 
-        <!-- Telegram Button with JS Click Event -->
-        <button class="telegram-btn" id="telegramBtn">
-            <span class="telegram-icon">&#10148;</span>
-            <span>Join Free Telegram Channel</span>
-            <span class="telegram-icon">&#10148;</span>
-        </button>
+    <!-- Optional: place your banner image in this folder
+         and name it banner.jpg -->
+    <img
+      class="banner"
+      src="banner.jpg"
+      alt="Colour Trading banner">
 
-        <!-- Features List -->
-        <ul class="features-list">
-            <li><span class="check-icon">&#9989;</span> 100% ACCURATE COLOR PREDICTION</li>
-            <li><span class="briefcase-icon">&#128184;</span> DAILY RECOVERY PROFIT SESSIONS</li>
-            <li><span class="money-icon">&#128176;</span> LOW CAPITAL SAFE PLAY TRICKS</li>
-            <li><span class="clock-icon">&#9200;</span> 24/7 SUPPORT & GUIDANCE</li>
-        </ul>
+    <section class="content">
 
-        <!-- Bottom Call to Action -->
-        <div class="join-now" id="joinNowText">
-            START EARNING NOW !!
-        </div>
-    </div>
+      <h2>Join Our Telegram Channel</h2>
 
-    <!-- JavaScript -->
-    <script>
-        const telegramBtn = document.getElementById('telegramBtn');
-        const joinNowText = document.getElementById('joinNowText');
+      <p class="description">
+        Connect with our community to explore educational
+        content, market concepts and technical analysis.
+      </p>
 
-        telegramBtn.addEventListener('click', function() {
-            // Yahan aap apna Telegram channel link daal sakte hain
-            alert("Redirecting to Color Trading VIP Telegram Channel...");
-            // window.location.href = "https://t.me/your_telegram_channel";
-        });
+      <ul class="features">
+        <li>✓ Trading education</li>
+        <li>✓ Technical analysis concepts</li>
+        <li>✓ Market updates and learning</li>
+        <li>✓ Risk awareness</li>
+      </ul>
 
-        joinNowText.addEventListener('click', function() {
-            alert("Click on 'Join Free Telegram Channel' to start trading!");
-        });
+      <a
+        class="join-btn"
+        href="https://t.me/+B0MF6Ds9vhllMTc1"
+        target="_blank"
+        rel="noopener noreferrer">
+        ✈ JOIN TELEGRAM NOW
+      </a>
 
-        console.log("Color Trading Landing Page Loaded Successfully!");
-    </script>
+      <p class="note">
+        Trading involves financial risk. This page is
+        educational and does not guarantee profits.
+      </p>
+
+    </section>
+
+    <footer class="footer">
+      Independent educational community.
+      Not affiliated with Meta or any official financial institution.
+    </footer>
+
+  </main>
+
 </body>
 </html>
