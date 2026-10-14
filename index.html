@@ -1,497 +1,262 @@
 <!DOCTYPE html>
-<html lang="en" class="dark scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WinFlex - Premium Colour Trading & Prediction Platform</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#090d16',
-                        cardBg: '#111827',
-                        cardBorder: '#1f2937',
-                        accentGreen: '#10b981',
-                        accentRed: '#ef4444',
-                        accentViolet: '#8b5cf6',
-                        accentGold: '#f59e0b',
-                    },
-                    boxShadow: {
-                        'neon-green': '0 0 25px rgba(16, 185, 129, 0.45)',
-                        'neon-red': '0 0 25px rgba(239, 68, 68, 0.45)',
-                        'neon-violet': '0 0 25px rgba(139, 92, 246, 0.45)',
-                        'neon-gold': '0 0 30px rgba(245, 158, 11, 0.5)',
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Font (Inter) -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Color Trading VIP Channel</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Inter', sans-serif; }
-        
-        /* Smooth Glow Animation */
-        @keyframes float-glow {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-8px) scale(1.02); }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
-        .animate-float-glow { animation: float-glow 4s infinite ease-in-out; }
+
+        body {
+            background-color: #0b0f19;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Outer Card Box */
+        .card-container {
+            background-color: #111827;
+            border: 3px solid #10b981;
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.3);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px 20px;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Logo Styling */
+        .logo-box {
+            background-color: #ffffff;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .circle-logo {
+            background: linear-gradient(135deg, #ef4444 0%, #10b981 100%);
+            width: 135px;
+            height: 135px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            font-weight: 800;
+            line-height: 1.1;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+
+        .logo-title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo-main {
+            font-size: 26px;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .logo-tiny {
+            font-size: 9px;
+            margin-top: 4px;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        /* Headings */
+        .main-heading {
+            color: #ffffff;
+            font-size: 19px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .star {
+            color: #facc15;
+        }
+
+        .sub-heading {
+            color: #10b981;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            margin-bottom: 18px;
+        }
+
+        /* VIP Badge */
+        .badge-vip {
+            background: linear-gradient(90deg, #ef4444, #10b981);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 14px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Telegram Button */
+        .telegram-btn {
+            background-color: #10b981;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 17px;
+            padding: 14px 20px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 22px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            cursor: pointer;
+            border: none;
+            width: 100%;
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+        }
+
+        .telegram-btn:hover {
+            transform: scale(1.03);
+            background-color: #059669;
+        }
+
+        .telegram-icon {
+            font-size: 18px;
+            transform: rotate(-20deg);
+        }
+
+        /* Features List */
+        .features-list {
+            list-style: none;
+            text-align: left;
+            max-width: 350px;
+            margin: 0 auto 22px auto;
+        }
+
+        .features-list li {
+            font-size: 12.5px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.3px;
+            color: #e5e7eb;
+        }
+
+        .features-list span {
+            margin-right: 10px;
+            font-size: 15px;
+        }
+
+        /* Join Now Footer */
+        .join-now {
+            font-size: 24px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            background: linear-gradient(90deg, #ef4444, #facc15, #10b981);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .join-now:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
-<body class="bg-darkBg text-gray-100 min-h-screen selection:bg-accentGold selection:text-black relative overflow-x-hidden">
+<body>
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 backdrop-blur-xl bg-darkBg/80 border-b border-cardBorder">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-accentGreen via-accentViolet to-accentGold flex items-center justify-center shadow-neon-gold">
-                    <i class="fa-solid fa-chart-line text-black text-xl font-bold"></i>
-                </div>
-                <div>
-                    <span class="text-2xl font-black tracking-wider bg-gradient-to-r from-white via-gray-200 to-accentGold bg-clip-text text-transparent">WINFLEX</span>
-                    <span class="block text-[10px] text-accentGreen font-bold tracking-widest uppercase">Colour Trading</span>
-                </div>
-            </div>
-
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold text-gray-300">
-                <a href="#simulator" class="hover:text-accentGold transition">Live Simulator</a>
-                <a href="#rules" class="hover:text-accentGold transition">How to Play</a>
-                <a href="#winners" class="hover:text-accentGold transition">Recent Winners</a>
-                <a href="#telegram" class="hover:text-accentGold transition">VIP Signals</a>
-            </nav>
-
-            <div class="flex items-center space-x-3">
-                <a href="#register" class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-xl bg-cardBg hover:bg-gray-800 text-sm font-bold text-gray-200 border border-cardBorder transition">
-                    Login
-                </a>
-                <a href="#register" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-accentGold to-amber-600 text-black font-extrabold text-sm shadow-neon-gold hover:opacity-90 transition transform hover:-translate-y-0.5">
-                    Register Now
-                </a>
+    <div class="card-container">
+        <!-- Top Trading Logo -->
+        <div class="logo-box">
+            <div class="circle-logo">
+                <span class="logo-title">Color</span>
+                <span class="logo-main">TRADING</span>
+                <span class="logo-tiny">100% Sure Signals</span>
             </div>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="relative pt-12 pb-24 lg:pt-20 lg:pb-32">
-        <!-- Ambient Glowing Orbs -->
-        <div class="absolute top-10 left-1/4 -translate-x-1/2 w-80 h-80 bg-accentGreen/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute top-20 right-10 w-96 h-96 bg-accentRed/15 rounded-full blur-3xl pointer-events-none"></div>
+        <!-- Main Heading -->
+        <h1 class="main-heading">
+            <span class="star">&#9733;</span> VIP COLOR TRADING <span class="star">&#9733;</span>
+        </h1>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
-                <!-- Left Column: Copywriting & CTAs -->
-                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
-                    <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-cardBg border border-gray-800 text-xs font-bold text-accentGold shadow-inner">
-                        <span class="w-2.5 h-2.5 rounded-full bg-accentGreen animate-ping"></span>
-                        <span>India's #1 Colour Prediction Platform</span>
-                    </div>
+        <p class="sub-heading">&#128200; INDIA'S NO.1 PREDICTION CHANNEL &#128640;</p>
 
-                    <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-tight">
-                        Predict Colours. <br>
-                        <span class="bg-gradient-to-r from-accentGreen via-accentViolet to-accentGold bg-clip-text text-transparent">
-                            Multiply Your Money
-                        </span> Daily!
-                    </h1>
-
-                    <p class="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                        Join over 150,000+ active traders predicting Red, Green & Violet. Superfast 30-second games, instant UPI withdrawals, and 98% accurate daily VIP Telegram signals!
-                    </p>
-
-                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
-                        <a href="#register" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-accentGreen to-emerald-600 text-black font-black text-base shadow-neon-green hover:opacity-95 transition flex items-center justify-center space-x-3">
-                            <i class="fa-solid fa-bolt text-lg"></i>
-                            <span>Register & Claim ₹500 Bonus</span>
-                        </a>
-                        <a href="https://telegram.org" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-[#229ED9]/20 hover:bg-[#229ED9]/30 border border-[#229ED9]/50 text-white font-bold text-base transition flex items-center justify-center space-x-3 backdrop-blur-md">
-                            <i class="fa-brands fa-telegram text-2xl text-[#229ED9]"></i>
-                            <span>Join Free Telegram Channel</span>
-                        </a>
-                    </div>
-
-                    <!-- Trust Stats -->
-                    <div class="grid grid-cols-3 gap-4 pt-8 border-t border-cardBorder max-w-lg mx-auto lg:mx-0">
-                        <div>
-                            <p class="text-2xl sm:text-3xl font-black text-white">₹50L+</p>
-                            <p class="text-xs text-gray-400">Daily Payouts</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl sm:text-3xl font-black text-accentGreen">99.8%</p>
-                            <p class="text-xs text-gray-400">Winning Rate</p>
-                        </div>
-                        <div>
-                            <p class="text-2xl sm:text-3xl font-black text-accentGold">30 Sec</p>
-                            <p class="text-xs text-gray-400">Instant UPI Payout</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Interactive Colour Trading Simulator -->
-                <div id="simulator" class="lg:col-span-5">
-                    <div class="bg-cardBg border-2 border-cardBorder rounded-3xl p-6 sm:p-8 shadow-2xl relative animate-float-glow">
-                        <div class="absolute -top-3.5 -right-3.5 bg-gradient-to-r from-accentGold to-amber-600 text-black text-xs font-black px-4 py-1.5 rounded-full shadow-lg">
-                            <i class="fa-solid fa-gamepad mr-1"></i> LIVE DEMO
-                        </div>
-
-                        <!-- Timer Header -->
-                        <div class="flex items-center justify-between pb-6 border-b border-cardBorder">
-                            <div>
-                                <span class="text-xs text-gray-400 font-semibold uppercase">Period Number</span>
-                                <h3 class="text-lg font-mono font-bold text-white" id="periodId">#20261014901</h3>
-                            </div>
-                            <div class="text-right">
-                                <span class="text-xs text-gray-400 font-semibold uppercase">Time Left</span>
-                                <div id="simTimer" class="text-2xl font-mono font-black text-accentGold">00:15</div>
-                            </div>
-                        </div>
-
-                        <!-- Colour Options -->
-                        <div class="mt-6">
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">1. Select Your Colour</label>
-                            <div class="grid grid-cols-3 gap-3">
-                                <button onclick="selectSimColor('Green')" id="btnGreen" class="sim-color-btn py-4 rounded-2xl bg-accentGreen/10 border-2 border-accentGreen text-accentGreen font-bold flex flex-col items-center justify-center transition hover:bg-accentGreen hover:text-black">
-                                    <i class="fa-solid fa-circle text-2xl mb-1"></i>
-                                    <span class="text-xs">Green (1:2)</span>
-                                </button>
-                                <button onclick="selectSimColor('Violet')" id="btnViolet" class="sim-color-btn py-4 rounded-2xl bg-accentViolet/10 border-2 border-accentViolet text-accentViolet font-bold flex flex-col items-center justify-center transition hover:bg-accentViolet hover:text-white">
-                                    <i class="fa-solid fa-circle text-2xl mb-1"></i>
-                                    <span class="text-xs">Violet (1:4.5)</span>
-                                </button>
-                                <button onclick="selectSimColor('Red')" id="btnRed" class="sim-color-btn py-4 rounded-2xl bg-accentRed/10 border-2 border-accentRed text-accentRed font-bold flex flex-col items-center justify-center transition hover:bg-accentRed hover:text-white">
-                                    <i class="fa-solid fa-circle text-2xl mb-1"></i>
-                                    <span class="text-xs">Red (1:2)</span>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!-- Bet Amount Input -->
-                        <div class="mt-5">
-                            <label class="block text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">2. Enter Bet Amount (₹)</label>
-                            <div class="grid grid-cols-4 gap-2 mb-2">
-                                <button onclick="setBetAmount(10)" class="py-2 rounded-xl bg-gray-800 text-xs font-bold hover:bg-gray-700">₹10</button>
-                                <button onclick="setBetAmount(100)" class="py-2 rounded-xl bg-gray-800 text-xs font-bold hover:bg-gray-700">₹100</button>
-                                <button onclick="setBetAmount(500)" class="py-2 rounded-xl bg-gray-800 text-xs font-bold hover:bg-gray-700">₹500</button>
-                                <button onclick="setBetAmount(1000)" class="py-2 rounded-xl bg-gray-800 text-xs font-bold hover:bg-gray-700">₹1000</button>
-                            </div>
-                            <input type="number" id="simBetAmount" value="100" min="10" class="w-full px-4 py-3 rounded-xl bg-gray-900 border border-gray-700 text-white font-bold text-center focus:outline-none focus:border-accentGold transition">
-                        </div>
-
-                        <!-- Action Button -->
-                        <button onclick="runSimulatorBet()" id="simSubmitBtn" class="w-full mt-6 py-4 rounded-xl bg-gradient-to-r from-accentGold to-amber-600 text-black font-extrabold text-base shadow-neon-gold hover:opacity-95 transition">
-                            Submit Prediction
-                        </button>
-
-                        <!-- Simulator Result Box -->
-                        <div id="simResultBox" class="hidden mt-4 p-4 rounded-2xl text-center font-extrabold text-sm border"></div>
-                    </div>
-                </div>
-
-            </div>
+        <!-- VIP Badge -->
+        <div class="badge-vip">
+            <span>&#128308;</span>
+            <span>DAILY 3-4 SURE SHOT WIN</span>
+            <span>&#128994;</span>
         </div>
-    </section>
 
-    <!-- How to Play Section -->
-    <section id="rules" class="py-20 bg-cardBg/40 border-y border-cardBorder">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 class="text-xs uppercase tracking-widest text-accentGold font-extrabold mb-2">Easy 3-Step Guide</h2>
-                <h3 class="text-3xl sm:text-5xl font-black tracking-tight">How to Play & Win Big</h3>
-                <p class="text-gray-400 mt-3">Follow these quick rules to start earning daily income in minutes.</p>
-            </div>
+        <!-- Telegram Button with JS Click Event -->
+        <button class="telegram-btn" id="telegramBtn">
+            <span class="telegram-icon">&#10148;</span>
+            <span>Join Free Telegram Channel</span>
+            <span class="telegram-icon">&#10148;</span>
+        </button>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Step 1 -->
-                <div class="bg-cardBg border border-cardBorder rounded-3xl p-8 relative hover:border-accentGreen/50 transition duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-accentGreen/10 border border-accentGreen/30 flex items-center justify-center text-accentGreen text-2xl font-black mb-6">
-                        01
-                    </div>
-                    <h4 class="text-xl font-extrabold text-white mb-3">Select Your Colour</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Pick <span class="text-accentGreen font-bold">Green</span>, <span class="text-accentRed font-bold">Red</span>, or <span class="text-accentViolet font-bold">Violet</span> based on your strategy or our daily Telegram VIP signals.
-                    </p>
-                </div>
-                <!-- Step 2 -->
-                <div class="bg-cardBg border border-cardBorder rounded-3xl p-8 relative hover:border-accentGold/50 transition duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-accentGold/10 border border-accentGold/30 flex items-center justify-center text-accentGold text-2xl font-black mb-6">
-                        02
-                    </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Place Your Amount</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        Enter any amount starting from ₹10. Multipliers range from 2x (Green/Red) up to 9x (Specific Number hits).
-                    </p>
-                </div>
-                <!-- Step 3 -->
-                <div class="bg-cardBg border border-cardBorder rounded-3xl p-8 relative hover:border-accentViolet/50 transition duration-300">
-                    <div class="w-14 h-14 rounded-2xl bg-accentViolet/10 border border-accentViolet/30 flex items-center justify-center text-accentViolet text-2xl font-black mb-6">
-                        03
-                    </div>
-                    <h4 class="text-xl font-bold text-white mb-3">Instant Withdrawal</h4>
-                    <p class="text-gray-400 text-sm leading-relaxed">
-                        When the timer hits zero, check your win! Request payouts directly to PhonePe, Paytm, Google Pay, or Bank account.
-                    </p>
-                </div>
-            </div>
+        <!-- Features List -->
+        <ul class="features-list">
+            <li><span class="check-icon">&#9989;</span> 100% ACCURATE COLOR PREDICTION</li>
+            <li><span class="briefcase-icon">&#128184;</span> DAILY RECOVERY PROFIT SESSIONS</li>
+            <li><span class="money-icon">&#128176;</span> LOW CAPITAL SAFE PLAY TRICKS</li>
+            <li><span class="clock-icon">&#9200;</span> 24/7 SUPPORT & GUIDANCE</li>
+        </ul>
+
+        <!-- Bottom Call to Action -->
+        <div class="join-now" id="joinNowText">
+            START EARNING NOW !!
         </div>
-    </section>
-
-    <!-- Recent Winners Live Ticker Table -->
-    <section id="winners" class="py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center justify-between mb-12">
-                <div>
-                    <h2 class="text-xs uppercase tracking-widest text-accentGreen font-extrabold mb-2">Live Proof</h2>
-                    <h3 class="text-3xl font-black tracking-tight">Recent Live Winners Ticker</h3>
-                </div>
-                <div class="mt-4 md:mt-0 inline-flex items-center space-x-2 px-4 py-2 rounded-xl bg-accentGreen/10 border border-accentGreen/30 text-accentGreen text-sm font-bold">
-                    <span class="w-2.5 h-2.5 rounded-full bg-accentGreen animate-ping"></span>
-                    <span>Live Updates (Real-Time)</span>
-                </div>
-            </div>
-
-            <!-- Table Container -->
-            <div class="bg-cardBg border border-cardBorder rounded-3xl overflow-hidden shadow-2xl">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse">
-                        <thead>
-                            <tr class="border-b border-cardBorder text-gray-400 text-xs uppercase tracking-wider bg-gray-900/60">
-                                <th class="p-4 sm:p-6">User ID</th>
-                                <th class="p-4 sm:p-6">Game Mode</th>
-                                <th class="p-4 sm:p-6">Color Picked</th>
-                                <th class="p-4 sm:p-6">Winning Amount</th>
-                                <th class="p-4 sm:p-6">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody id="winnersTableBody" class="divide-y divide-cardBorder text-sm">
-                            <!-- Populated dynamic rows by JS -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- VIP Telegram Channel Section -->
-    <section id="telegram" class="py-20 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-gradient-to-br from-[#0c1b2e] to-[#111827] border-2 border-[#229ED9]/40 rounded-3xl p-8 sm:p-12 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-8 space-y-5">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#229ED9]/20 text-[#229ED9] text-xs font-black">
-                        <i class="fa-brands fa-telegram text-base"></i>
-                        <span>OFFICIAL VIP SIGNALS</span>
-                    </div>
-                    <h3 class="text-3xl sm:text-5xl font-black text-white leading-tight">
-                        Join Telegram VIP Channel For 95%+ Accuracy Signals
-                    </h3>
-                    <p class="text-gray-300 text-base leading-relaxed max-w-2xl">
-                        Never trade randomly! Join our official Telegram community of over 85,000+ traders receiving daily live color forecasts, period prediction charts, and double-money recovery plans.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-                        <div class="flex items-center space-x-2 text-xs font-bold text-gray-300">
-                            <i class="fa-solid fa-circle-check text-accentGreen"></i>
-                            <span>5 Daily Prediction Sessions</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-xs font-bold text-gray-300">
-                            <i class="fa-solid fa-circle-check text-accentGreen"></i>
-                            <span>95%+ Proven Accuracy</span>
-                        </div>
-                        <div class="flex items-center space-x-2 text-xs font-bold text-gray-300">
-                            <i class="fa-solid fa-circle-check text-accentGreen"></i>
-                            <span>Exclusive Gift Code Giveaways</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="lg:col-span-4 flex flex-col gap-4">
-                    <a href="https://telegram.org" target="_blank" class="w-full py-5 rounded-2xl bg-[#229ED9] hover:bg-[#1c83b5] text-white font-black text-center shadow-lg transition flex items-center justify-center space-x-3 text-lg">
-                        <i class="fa-brands fa-telegram text-3xl"></i>
-                        <span>Join Telegram Channel</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Registration Section -->
-    <section id="register" class="py-20 bg-cardBg/40 border-t border-cardBorder">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-cardBg border border-cardBorder rounded-3xl p-8 sm:p-12 shadow-2xl">
-                <div class="text-center max-w-lg mx-auto mb-10">
-                    <h2 class="text-xs uppercase tracking-widest text-accentGold font-extrabold mb-2">Create Account</h2>
-                    <h3 class="text-3xl font-black tracking-tight">Get Started & Claim ₹500 Bonus</h3>
-                </div>
-
-                <form id="signupForm" onsubmit="handleSignup(event)" class="space-y-5">
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Mobile Number</label>
-                        <div class="relative">
-                            <span class="absolute inset-y-0 left-0 pl-4 flex items-center text-gray-400 font-bold">+91</span>
-                            <input type="tel" id="userPhone" required placeholder="Enter 10-digit mobile number" class="w-full pl-14 pr-4 py-3.5 rounded-xl bg-gray-900 border border-gray-700 text-white font-semibold focus:outline-none focus:border-accentGold transition">
-                        </div>
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Password</label>
-                        <input type="password" id="userPass" required placeholder="At least 6 characters" class="w-full px-4 py-3.5 rounded-xl bg-gray-900 border border-gray-700 text-white font-semibold focus:outline-none focus:border-accentGold transition">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold uppercase tracking-wider text-gray-300 mb-2">Invite / Referral Code (Optional)</label>
-                        <input type="text" id="userInvite" placeholder="Enter invitation code" class="w-full px-4 py-3.5 rounded-xl bg-gray-900 border border-gray-700 text-white font-semibold focus:outline-none focus:border-accentGold transition">
-                    </div>
-                    <div class="flex items-center space-x-3 text-xs text-gray-400">
-                        <input type="checkbox" id="termsCheck" required class="rounded bg-gray-900 border-gray-700 text-accentGold focus:ring-accentGold">
-                        <label for="termsCheck">I agree to the Terms & Privacy Policy and confirm I am 18+ years old.</label>
-                    </div>
-                    <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-accentGold to-amber-600 text-black font-black text-base shadow-neon-gold hover:opacity-95 transition">
-                        Register & Get ₹500 Bonus
-                    </button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-darkBg border-t border-cardBorder text-gray-400 py-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-xs space-y-4">
-            <p class="text-gray-500">
-                Disclaimer: Colour Trading involves financial risk. Please play responsibly and at your own discretion. 18+ Only.
-            </p>
-            <p>&copy; 2026 WinFlex Colour Trading Platform. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Notification Toast -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 hidden bg-cardBg border border-accentGold text-white px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3">
-        <i class="fa-solid fa-circle-check text-accentGold text-xl"></i>
-        <span id="toastMsg" class="font-bold text-sm"></span>
     </div>
 
-    <!-- JavaScript Interactivity -->
+    <!-- JavaScript -->
     <script>
-        // --- 1. Countdown & Period ID Logic ---
-        let simTimeLeft = 15;
-        let simPeriod = 20261014901;
+        const telegramBtn = document.getElementById('telegramBtn');
+        const joinNowText = document.getElementById('joinNowText');
 
-        setInterval(() => {
-            simTimeLeft--;
-            if (simTimeLeft < 0) {
-                simTimeLeft = 30;
-                simPeriod++;
-                document.getElementById('periodId').textContent = `#${simPeriod}`;
-            }
-            let secStr = simTimeLeft < 10 ? '0' + simTimeLeft : simTimeLeft;
-            document.getElementById('simTimer').textContent = `00:${secStr}`;
-        }, 1000);
+        telegramBtn.addEventListener('click', function() {
+            // Yahan aap apna Telegram channel link daal sakte hain
+            alert("Redirecting to Color Trading VIP Telegram Channel...");
+            // window.location.href = "https://t.me/your_telegram_channel";
+        });
 
-        // --- 2. Interactive Simulator Logic ---
-        let selectedColor = null;
+        joinNowText.addEventListener('click', function() {
+            alert("Click on 'Join Free Telegram Channel' to start trading!");
+        });
 
-        function selectSimColor(color) {
-            selectedColor = color;
-            document.querySelectorAll('.sim-color-btn').forEach(btn => {
-                btn.classList.remove('ring-4', 'ring-white');
-            });
-
-            if (color === 'Green') document.getElementById('btnGreen').classList.add('ring-4', 'ring-white');
-            if (color === 'Violet') document.getElementById('btnViolet').classList.add('ring-4', 'ring-white');
-            if (color === 'Red') document.getElementById('btnRed').classList.add('ring-4', 'ring-white');
-        }
-
-        function setBetAmount(amount) {
-            document.getElementById('simBetAmount').value = amount;
-        }
-
-        function runSimulatorBet() {
-            const betInput = document.getElementById('simBetAmount').value;
-            const resBox = document.getElementById('simResultBox');
-
-            if (!selectedColor) {
-                showToast('Please select Green, Violet, or Red first!');
-                return;
-            }
-
-            if (!betInput || betInput <= 0) {
-                showToast('Please enter a valid bet amount!');
-                return;
-            }
-
-            // Simulate result random pick
-            const colors = ['Green', 'Red', 'Violet'];
-            const winningColor = colors[Math.floor(Math.random() * colors.length)];
-            const isWin = (selectedColor === winningColor);
-
-            resBox.classList.remove('hidden', 'bg-accentGreen/20', 'border-accentGreen', 'text-accentGreen', 'bg-accentRed/20', 'border-accentRed', 'text-accentRed');
-
-            if (isWin) {
-                const winAmount = selectedColor === 'Violet' ? betInput * 4.5 : betInput * 2;
-                resBox.classList.add('bg-accentGreen/20', 'border-accentGreen', 'text-accentGreen');
-                resBox.innerHTML = `🎉 WON! Result: <span class="font-bold">${winningColor}</span>. You won ₹${winAmount}!`;
-            } else {
-                resBox.classList.add('bg-accentRed/20', 'border-accentRed', 'text-accentRed');
-                resBox.innerHTML = `❌ Better luck next time! Result was <span class="font-bold">${winningColor}</span>.`;
-            }
-        }
-
-        // --- 3. Simulated Live Winners Table Data ---
-        const usernames = ['Rahul_99', 'Amit_King', 'Priya_Win', 'Vikram_X', 'Karan_77', 'Suresh_Pro'];
-        const modes = ['Colour 30s', 'Colour 1Min', 'Colour 3Min'];
-        const pickColors = ['Green', 'Red', 'Violet'];
-
-        function generateWinners() {
-            const tbody = document.getElementById('winnersTableBody');
-            tbody.innerHTML = '';
-
-            for (let i = 0; i < 5; i++) {
-                const user = usernames[Math.floor(Math.random() * usernames.length)] + '***';
-                const mode = modes[Math.floor(Math.random() * modes.length)];
-                const color = pickColors[Math.floor(Math.random() * pickColors.length)];
-                const amount = '₹' + (Math.floor(Math.random() * 50) + 1) * 500;
-
-                let colorBadge = '';
-                if (color === 'Green') colorBadge = '<span class="px-3 py-1 rounded-full bg-accentGreen/20 text-accentGreen font-bold text-xs">Green</span>';
-                if (color === 'Red') colorBadge = '<span class="px-3 py-1 rounded-full bg-accentRed/20 text-accentRed font-bold text-xs">Red</span>';
-                if (color === 'Violet') colorBadge = '<span class="px-3 py-1 rounded-full bg-accentViolet/20 text-accentViolet font-bold text-xs">Violet</span>';
-
-                const row = `
-                    <tr class="hover:bg-gray-800/30 transition">
-                        <td class="p-4 sm:p-6 font-bold text-white">${user}</td>
-                        <td class="p-4 sm:p-6 text-gray-300">${mode}</td>
-                        <td class="p-4 sm:p-6">${colorBadge}</td>
-                        <td class="p-4 sm:p-6 font-black text-accentGold">${amount}</td>
-                        <td class="p-4 sm:p-6 text-accentGreen font-bold text-xs"><i class="fa-solid fa-check-circle mr-1"></i> Paid</td>
-                    </tr>
-                `;
-                tbody.innerHTML += row;
-            }
-        }
-
-        generateWinners();
-        setInterval(generateWinners, 6000); // Live updates every 6 seconds
-
-        // --- 4. Custom Toast Notification ---
-        function showToast(msg) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toastMsg').textContent = msg;
-            toast.classList.remove('hidden');
-            setTimeout(() => toast.classList.add('hidden'), 3000);
-        }
-
-        // --- 5. Registration Handler ---
-        function handleSignup(e) {
-            e.preventDefault();
-            const phone = document.getElementById('userPhone').value;
-            if (phone.length < 10) {
-                showToast('Please enter a valid 10-digit phone number.');
-                return;
-            }
-            showToast('🎉 Registered successfully! Claiming your ₹500 Bonus...');
-            document.getElementById('signupForm').reset();
-        }
+        console.log("Color Trading Landing Page Loaded Successfully!");
     </script>
 </body>
 </html>
